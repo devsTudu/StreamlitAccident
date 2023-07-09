@@ -8,9 +8,9 @@ import plotly.express as px
 st.title("Motor Vehicle Collisions in New York City")
 st.markdown("### A Streamlit Dashboard that used to analyse vehicle collision in NYC ")
 
-DATA_URL = "https://github.com/devsTudu/StreamlitAccident/blob/main/chunks/part_1.csv"
+DATA_URL = "https://github.com/devsTudu/StreamlitAccident/blob/main/chunks/part_0.csv"
 
-@st.cache(persist=True)
+@st.cache_data
 def load_data(nrows):
     data = pd.read_csv(DATA_URL,nrows=nrows,parse_dates=[['CRASH_DATE','CRASH_TIME']])
     data.dropna(subset=['LATITUDE','LONGITUDE'], inplace=True)
@@ -22,7 +22,7 @@ def load_data(nrows):
 data = load_data(100000)
 
 st.header("Where are the most people injured in NYC")
-injured_people = st.slider("Number of persons injured in vehicle Collisions :",5,19)
+injured_people = st.slider("Number of persons injured in vehicle Collisions :",6,19)
 st.map(data.query("injured_persons >= @injured_people")[["latitude","longitude"]].dropna(how="any"))
 
 st.header("How many collisions occur during a given time of a day ?")
