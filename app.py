@@ -4,11 +4,14 @@ import pandas as pd
 import pydeck as pdk
 import plotly.express as px
 
+url = 'https://drive.google.com/file/d/1vrOBdAR62kfZvi6pRmeFyjFWfhOJMIl9/view?usp=sharing'
+path = 'https://drive.google.com/uc?export=download&id=' + url.split('/')[-2]
+
 
 st.title("Motor Vehicle Collisions in New York City")
 st.markdown("### A Streamlit Dashboard that used to analyse vehicle collision in NYC ")
 
-DATA_URL = "/home/rhyme/Desktop/Project/Motor_Vehicle_Collisions_-_Crashes.csv"
+DATA_URL = path
 
 @st.cache(persist=True)
 def load_data(nrows):
