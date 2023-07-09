@@ -6,9 +6,9 @@ import plotly.express as px
 
 
 st.title("Motor Vehicle Collisions in New York City")
-st.markdown("### A Streamlit Dashboard that used to analyse vehicle collision in NYC ")
+st.markdown("### A Streamlit Dashboard that used to Analyse vehicle collision in NYC ")
 
-DATA_URL = "https://github.com/devsTudu/StreamlitAccident/blob/main/chunks/part_0.csv"
+DATA_URL = "https://raw.githubusercontent.com/devsTudu/StreamlitAccident/main/chunks/part_0.csv"
 
 @st.cache_data
 def load_data(nrows):
